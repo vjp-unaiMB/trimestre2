@@ -1,0 +1,23 @@
+h1 {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 20px;
+    
+
+}
+body{
+    background-color: rgb(255, 255, 255);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.panel{
+    border: 1px solid rgb(231, 231, 231);
+    background-color: rgb(231, 231, 231);
+    border-radius: 5px;margin:30px;
+    padding: 20px;
+}
+.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
