@@ -17,5 +17,9 @@ Route::get('/', function () {
 
 // Route::view('datos/{id?}','datos Vista',['id'=>5446]);
 
-Route::view('blog', 'blog') -> name('noticias');
-Route::view('fotos', 'fotos') -> name('galeria');
+// Route::view('blog', 'blog') -> name('noticias');
+// Route::view('fotos', 'fotos') -> name('galeria');
+
+Route::view('actividadSitio', 'actividadSitio') -> name('Inicio');
+Route::view('nosotros', 'nosotros') -> name('Nosotros');
+Route::view('proyecto/{num?}','proyecto',['num'=>1]) -> name('Proyecto');
