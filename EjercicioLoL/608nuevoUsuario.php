@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="author" content="Unai">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campeones LoL</title>
+    <title>Login</title>
     <style>
         body{
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -29,20 +29,19 @@
 </head>
 <body>
     <?php
-
-use function Laravel\Prompts\alert;
+        //Obtenemos los parámetros mandados por Link y los almaccenamos en variables.
 
         $nombre = isset($_GET['nombre']) ? htmlspecialchars($_GET['nombre']) : '';
         $usuario = isset($_GET['usuario']) ? htmlspecialchars($_GET['usuario']) : '';
         $contraseña = isset($_GET['contraseña']) ? htmlspecialchars($_GET['contraseña']) : '';
         $email = isset($_GET['email']) ? htmlspecialchars($_GET['email']) : '';
 
-        echo $nombre . $usuario . $contraseña . $email;
         //Creamos la conexión con la BD.
         $datosConexion = require './conexión.php'; //Obtenemos los parámetros de conexión.
         $conexion = new PDO("mysql:host={$datosConexion['nombreHost']};dbname={$datosConexion['nombreBD']};charset=utf8mb4",$datosConexion['usuario'],$datosConexion['contraseña']);
         
         try {
+            //Preparamos la sentencia SQL
             $sql = "INSERT INTO usuario(nombre, usuario, password, email) VALUES (:nombre,:usuario,:password,:email)";
             $stmt = $conexion->prepare($sql);
         
@@ -52,7 +51,7 @@ use function Laravel\Prompts\alert;
             $stmt->bindParam(':password', $contraseña, PDO::PARAM_STR);
             $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         
-            // Ejecutar
+            // Ejecutamos el Statment
             $stmt->execute();
     
             

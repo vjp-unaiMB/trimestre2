@@ -22,6 +22,7 @@
 
             $resultados = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+            //Mostramos los datos obtenidos de la BD
             foreach ($resultados as $panel) {
                 echo "
                     <div class='panel'>

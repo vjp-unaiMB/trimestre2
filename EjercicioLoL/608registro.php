@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="author" content="Unai">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campeones LoL</title>
+    <title>Login</title>
 </head>
 <body>
     <main>
@@ -26,6 +26,9 @@
                     $usuario= $_POST["usuario"];
                     $contraseña= $_POST["contraseña"];
                     $email= $_POST["mail"];
+                    
+                    //Cifrado de contraseña co password_hash
+                    $contraseña = password_hash($contraseña, PASSWORD_DEFAULT);
 
                     header("Location: 608nuevoUsuario.php?nombre={$nombre}&usuario={$usuario}&contraseña={$contraseña}&email={$email}");
                 }

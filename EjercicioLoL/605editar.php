@@ -46,11 +46,14 @@
 </head>
 <body>
     <?php
+    //Obtenemos los valores ingresados por parámetro almacenándolos en variables.
         $id = isset($_GET['id'])? (int)$_GET['id'] : null;
         $nombre = isset($_GET['nombre']) ? htmlspecialchars($_GET['nombre']) : '';
         $rol = isset($_GET['rol']) ? htmlspecialchars($_GET['rol']) : '';
         $dificultad = isset($_GET['dificultad']) ? htmlspecialchars($_GET['dificultad']) : '';
         $descripcion = isset($_GET['descripcion']) ? htmlspecialchars($_GET['descripcion']) : '';
+    
+    //Generamos el formulario de edición de datos del personaje añadiéndole los parámetros anteriores.
     ?>
     <main>
         <form action="<?=$_SERVER['PHP_SELF'];?>?id=<?=$id;?>" method="post">
@@ -66,6 +69,7 @@
             <input type="submit" value="Cambiar">
             <?php
                 if($_SERVER["REQUEST_METHOD"] == "POST"){
+                    
                     //Almacenamos los valores de los campos de formulario.
                     $nombre= $_POST["nombre"];
                     $rol= $_POST["rol"];
@@ -80,16 +84,17 @@
                         $sql = "UPDATE campeon SET id = :id,nombre = :nombre,rol = :rol,dificultad = :dificultad,descripcion = :descripcion WHERE id = :id";
                         $stmt = $conexion->prepare($sql);
                     
-                        // Asignar parámetros
+                        // Asignamos los parámetros a su referencia de columna.
                         $stmt->bindParam(':rol', $rol, PDO::PARAM_STR);
                         $stmt->bindParam(':nombre', $nombre, PDO::PARAM_STR);
                         $stmt->bindParam(':dificultad', $dificultad, PDO::PARAM_STR);
                         $stmt->bindParam(':descripcion', $descripcion, PDO::PARAM_STR);
                         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
                     
-                        // Ejecutar
+                        // Ejecutamos el statment
                         $stmt->execute();
                     
+                        // Redireccionamos al listado de campeones después de la edición.
                         header("Location: 604-606-607campeones.php");
                         
                     } catch (PDOException $e) {
