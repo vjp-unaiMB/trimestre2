@@ -8,7 +8,7 @@
 </head>
 <body>
     <main>
-        <form action="<?=$_SERVER['PHP_SELF'];?>?id=<?=$id;?>" method="post">
+        <form action="<?=$_SERVER['PHP_SELF'];?>" method="post">
             <h1>Crear nuevo Usuaario</h1>
             <label for="nomb">Nombre:</label>
             <input type="text" id="nomb" name="nombre" required><br> 
@@ -27,7 +27,7 @@
                     $contraseña= $_POST["contraseña"];
                     $email= $_POST["mail"];
 
-                    header("Location: 608nuevoUsuario.php?nombre=$nombre&usuario=$usuario$&contraseña=contraseña&email=$email");
+                    header("Location: 608nuevoUsuario.php?nombre={$nombre}&usuario={$usuario}&contraseña={$contraseña}&email={$email}");
                 }
             ?>
         </form>
