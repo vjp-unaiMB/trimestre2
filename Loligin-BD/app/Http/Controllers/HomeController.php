@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use  App\Models\personaje;
-
+use  App\Models\Personaje;
+use  App\Models\User;
 class HomeController extends Controller
 {
     /**
@@ -22,9 +22,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        $aux = personaje::all();
-        return view('home',compact("aux"));
+    public function index(){
+        $user = auth()->user();
+        $personaje = Personaje::findOrFail($user->id);
+        return view('home', compact('personaje'));
     }
+
+
 }

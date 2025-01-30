@@ -13,15 +13,15 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($aux as $personaje)
-                @if<tr>
-                    <td>{{ $personaje->nombre }}</td>
-                    <td>{{ $personaje->fuerza }}</td>
-                    <td>{{ $personaje->destreza }}</td>
-                    <td>{{ $personaje->vida }}</td>
-                    <td>{{ $personaje->ColorAsociado }}</td>  
-                </tr>      
-            @endforeach
+            
+            <tr>
+                <td>{{ $personaje->nombre }}</td>
+                <td>{{ $personaje->fuerza }}</td>
+                <td>{{ $personaje->destreza }}</td>
+                <td>{{ $personaje->vida }}</td>
+                <td>{{ $personaje->ColorAsociado }}</td>  
+            </tr>      
+          
         </tbody>             
     </table>
 </div>

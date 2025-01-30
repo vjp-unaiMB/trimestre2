@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('personajes', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
+            $table->string('retrato');
+            $table->string('vida');
+            $table->string('destreza');
+            $table->string('fuerza');
+            $table->string('colorAsociado');
+            $table->foreignKey('user_id')->references ('id')->on('users');
             $table->timestamps();
         });
     }
