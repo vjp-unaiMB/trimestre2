@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\CholloController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Chollos.index');
+    //return view('welcome');
 });
+
+Route::get('/nuevos', function () {
+    return view('Chollos.nuevos');
+    //return view('welcome');
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [CholloController::class, 'index']);
+Route::get('/nuevos', [CholloController::class, 'index']);
+
