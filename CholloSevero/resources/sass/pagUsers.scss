@@ -1,0 +1,23 @@
+header {
+    padding:0px;
+}   
+
+
+.cajaUsuarios{
+    background-color: rgb(255, 255, 255);
+    margin:60px;
+    border-radius: 30px;
+    min-height: 800px;
+    display: flex;
+    
+    align-items: center; 
+    flex-direction: column;  
+
+}
+
+h1{
+    margin:40px;
+}
+.cajaUsuarios  table{
+    width: 80%;
+}

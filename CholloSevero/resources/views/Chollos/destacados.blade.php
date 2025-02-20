@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/a01e1a52c3.js" crossorigin="anonymous"></script>
-    <title>CholloSevero Nuevos</title>
+    <title>CholloSevero Destacados</title>
 
     @vite('resources/sass/EstilosGlobales.scss')
-    @vite('resources/sass/Nuevos.scss')
+    @vite('resources/sass/Destacados.scss')
 </head>
 <body>
     {{-- Incluimos el header --}}
     @include('partials.header')
 
     <main>
-        <h1 class="mainEncabezado">Últimos Chollos :</h1>
+        <h1 class="mainEncabezado">Chollos destacados:</h1>
         <div class="chollos">
             {{-- Iteramos sobre los chollos para generar las tarjetas --}}
             @foreach ($chollos as $chollo)

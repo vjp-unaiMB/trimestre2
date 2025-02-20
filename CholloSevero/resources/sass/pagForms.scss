@@ -1,0 +1,41 @@
+header {
+    padding:0px;
+}   
+
+
+.cajaForm{
+    background-color: rgb(255, 255, 255);
+    margin:60px;
+    border-radius: 30px;
+    min-height: 800px;
+    display: flex;
+    
+    align-items: center; 
+    flex-direction: column;  
+
+}
+
+h1{
+    margin:40px;
+}
+.cajaForm  form{
+    width: 80%;
+}
+
+input{
+    width: 80%;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.select{
+    margin: 20px 0px;
+    margin-top: 40px;
+}
+
+button{
+    background-color: rgb(223, 83, 2)!important;
+    border: 2px solid rgb(148, 62, 0)!important;
+    width: 200px !important;
+    margin: 0px;
+}
